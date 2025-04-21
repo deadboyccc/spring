@@ -61,6 +61,3 @@ A personal sandbox for experimenting with different API paradigms (REST, gRPC, S
 - **Continual growth:** Add new experiments as Spring evolves.
 
 ---
-
-> **Tip:** Treat each folder as its own mini‑tutorial—read its README, run the examples, then riff on them to discover how Spring’s pieces fit together.
-
