@@ -42,14 +42,26 @@ public class HealthCheckController {
         "UP",
         LocalDateTime.now().format(ISO_FORMATTER)));
   }
-
   @GetMapping("/diagnostics")
-  public ResponseEntity<Diagnostics> diagnostics() {
-    return ResponseEntity.ok(new Diagnostics(
-        getCpuUsage(),
-        getMemoryUsage(),
-        getDiskSpace(),
-        LocalDateTime.now().format(ISO_FORMATTER)));
+  public ResponseEntity<Map<String, Object>> diagnostics() {
+    return ResponseEntity.ok(Map.of(
+        "cpuUsage", getCpuUsage() + "%",
+        "memoryUsage", getMemoryUsage() + "%",
+        "diskSpace", formatDiskSpace(getDiskSpace()),
+        "timestamp", LocalDateTime.now().format(ISO_FORMATTER)
+    ));
+  }
+
+  private Map<String, String> formatDiskSpace(Map<String, Long> diskSpace) {
+    return Map.of(
+        "total", formatBytesToGB(diskSpace.get("total")) + " GB",
+        "free", formatBytesToGB(diskSpace.get("free")) + " GB",
+        "used", formatBytesToGB(diskSpace.get("used")) + " GB"
+    );
+  }
+
+  private String formatBytesToGB(long bytes) {
+    return String.format("%.2f", bytes / (1024.0 * 1024.0 * 1024.0));
   }
 
   private double getCpuUsage() {
