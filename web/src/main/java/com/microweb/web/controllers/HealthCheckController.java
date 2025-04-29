@@ -68,7 +68,7 @@ public class HealthCheckController {
     if (osBean == null) {
       return -1;
     }
-    double load = osBean.getSystemCpuLoad();
+    double load = osBean.getCpuLoad();
     return (load < 0) ? -1 : load * 100;
   }
 
