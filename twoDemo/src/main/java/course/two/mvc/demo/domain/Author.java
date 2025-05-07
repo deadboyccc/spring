@@ -1,5 +1,6 @@
 package course.two.mvc.demo.domain;
 
+import java.util.HashSet;
 import java.util.Set;
 
 import jakarta.persistence.Entity;
@@ -19,7 +20,7 @@ public class Author {
     private String LastName;
 
     @ManyToMany(mappedBy = "authors")
-    private Set<Book> books;
+    private Set<Book> books = new HashSet<>();
 
     public long getId() {
         return id;
