@@ -2,11 +2,27 @@
     "configurations": [
         {
             "type": "java",
+            "name": "DemoApplication",
+            "request": "launch",
+            "mainClass": "course.two.mvc.demo.DemoApplication"
+        },
+        {
+            "type": "java",
             "name": "Spring Boot-WebApplication<web>",
             "request": "launch",
             "cwd": "${workspaceFolder}",
             "mainClass": "com.microweb.web.WebApplication",
             "projectName": "web",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
+        },
+        {
+            "type": "java",
+            "name": "Spring Boot-DemoApplication<demo>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "course.two.mvc.demo.DemoApplication",
+            "projectName": "demo",
             "args": "",
             "envFile": "${workspaceFolder}/.env"
         }
