@@ -3,6 +3,7 @@ package demo.project.lambok.five.controller;
 import java.util.List;
 import java.util.UUID;
 
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -24,6 +25,10 @@ import org.springframework.web.bind.annotation.RequestParam;
 public class BeerController {
 
     private final BeerService beerService;
+    public ResponseEntity handlePost(Beer beer){
+        Beer savedBeer= beerService.saveNewBeer(beer);
+        
+    }
 
     @RequestMapping(method = RequestMethod.GET)
     public List<Beer> listBeers() {
