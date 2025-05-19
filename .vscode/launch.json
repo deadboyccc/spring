@@ -35,6 +35,16 @@
             "projectName": "test",
             "args": "",
             "envFile": "${workspaceFolder}/.env"
+        },
+        {
+            "type": "java",
+            "name": "Spring Boot-VstestApplication<vstest>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "com.example.vstest.VstestApplication",
+            "projectName": "vstest",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
         }
     ]
 }
