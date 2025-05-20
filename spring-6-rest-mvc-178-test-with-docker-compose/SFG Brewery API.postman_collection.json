@@ -1,0 +1,2527 @@
+{
+	"info": {
+		"_postman_id": "8bbb20ac-0fb8-423f-8a54-be966a4245e6",
+		"name": "SFG Brewery API",
+		"description": "Contact Support:\n Name: John Thompson",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "19080853"
+	},
+	"item": [
+		{
+			"name": "api",
+			"item": [
+				{
+					"name": "v1",
+					"item": [
+						{
+							"name": "beer",
+							"item": [
+								{
+									"name": "{beerId}",
+									"item": [
+										{
+											"name": "Get Beer by Id",
+											"request": {
+												"method": "GET",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "application/json"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/api/v1/beer/:beerId?showInventoryOnHand=false",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"v1",
+														"beer",
+														":beerId"
+													],
+													"query": [
+														{
+															"key": "showInventoryOnHand",
+															"value": "false",
+															"description": "Show Inventory On Hand"
+														}
+													],
+													"variable": [
+														{
+															"key": "beerId",
+															"value": "<uuid>",
+															"description": "(Required) Beer Id"
+														}
+													]
+												},
+												"description": "Get Beer by Id"
+											},
+											"response": [
+												{
+													"name": "Get Beer by id Response",
+													"originalRequest": {
+														"method": "GET",
+														"header": [
+															{
+																"key": "Accept",
+																"value": "application/json"
+															}
+														],
+														"url": {
+															"raw": "{{baseUrl}}/api/v1/beer/:beerId?showInventoryOnHand=false",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"v1",
+																"beer",
+																":beerId"
+															],
+															"query": [
+																{
+																	"key": "showInventoryOnHand",
+																	"value": "false",
+																	"description": "Show Inventory On Hand"
+																}
+															],
+															"variable": [
+																{
+																	"key": "beerId"
+																}
+															]
+														}
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "json",
+													"header": [
+														{
+															"key": "Content-Type",
+															"value": "application/json"
+														}
+													],
+													"cookie": [],
+													"body": "{\n  \"beerName\": \"cu\",\n  \"beerStyle\": {},\n  \"price\": \"occaecat do tempor\",\n  \"upc\": \"exercitation sed\",\n  \"quantityOnHand\": 82298849,\n  \"id\": \"<uuid>\",\n  \"version\": \"<integer>\",\n  \"createdDate\": \"<dateTime>\",\n  \"lastModifiedDate\": \"<dateTime>\"\n}"
+												},
+												{
+													"name": "Not Found",
+													"originalRequest": {
+														"method": "GET",
+														"header": [],
+														"url": {
+															"raw": "{{baseUrl}}/api/v1/beer/:beerId?showInventoryOnHand=false",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"v1",
+																"beer",
+																":beerId"
+															],
+															"query": [
+																{
+																	"key": "showInventoryOnHand",
+																	"value": "false",
+																	"description": "Show Inventory On Hand"
+																}
+															],
+															"variable": [
+																{
+																	"key": "beerId"
+																}
+															]
+														}
+													},
+													"status": "Not Found",
+													"code": 404,
+													"_postman_previewlanguage": "text",
+													"header": [],
+													"cookie": [],
+													"body": ""
+												}
+											]
+										},
+										{
+											"name": "Update Beer by Id",
+											"request": {
+												"method": "PUT",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"beerName\": \"magna aliquip ad\",\n  \"beerStyle\": {},\n  \"price\": \"mollit\",\n  \"upc\": \"est deserunt\",\n  \"quantityOnHand\": 98176952\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{baseUrl}}/api/v1/beer/:beerId",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"v1",
+														"beer",
+														":beerId"
+													],
+													"variable": [
+														{
+															"key": "beerId",
+															"value": "<uuid>",
+															"description": "(Required) Beer Id"
+														}
+													]
+												},
+												"description": "Update Beer by Id"
+											},
+											"response": [
+												{
+													"name": "Beer Updated",
+													"originalRequest": {
+														"method": "PUT",
+														"header": [
+															{
+																"key": "Content-Type",
+																"value": "application/json"
+															}
+														],
+														"body": {
+															"mode": "raw",
+															"raw": "{\n  \"beerName\": \"magna aliquip ad\",\n  \"beerStyle\": {},\n  \"price\": \"mollit\",\n  \"upc\": \"est deserunt\",\n  \"quantityOnHand\": 98176952\n}",
+															"options": {
+																"raw": {
+																	"headerFamily": "json",
+																	"language": "json"
+																}
+															}
+														},
+														"url": {
+															"raw": "{{baseUrl}}/api/v1/beer/:beerId",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"v1",
+																"beer",
+																":beerId"
+															],
+															"variable": [
+																{
+																	"key": "beerId"
+																}
+															]
+														}
+													},
+													"status": "No Content",
+													"code": 204,
+													"_postman_previewlanguage": "text",
+													"header": [],
+													"cookie": [],
+													"body": ""
+												},
+												{
+													"name": "Bad Reqeust",
+													"originalRequest": {
+														"method": "PUT",
+														"header": [
+															{
+																"key": "Content-Type",
+																"value": "application/json"
+															}
+														],
+														"body": {
+															"mode": "raw",
+															"raw": "{\n  \"beerName\": \"magna aliquip ad\",\n  \"beerStyle\": {},\n  \"price\": \"mollit\",\n  \"upc\": \"est deserunt\",\n  \"quantityOnHand\": 98176952\n}",
+															"options": {
+																"raw": {
+																	"headerFamily": "json",
+																	"language": "json"
+																}
+															}
+														},
+														"url": {
+															"raw": "{{baseUrl}}/api/v1/beer/:beerId",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"v1",
+																"beer",
+																":beerId"
+															],
+															"variable": [
+																{
+																	"key": "beerId"
+																}
+															]
+														}
+													},
+													"status": "Bad Request",
+													"code": 400,
+													"_postman_previewlanguage": "text",
+													"header": [],
+													"cookie": [],
+													"body": ""
+												},
+												{
+													"name": "Not Found",
+													"originalRequest": {
+														"method": "PUT",
+														"header": [
+															{
+																"key": "Content-Type",
+																"value": "application/json"
+															}
+														],
+														"body": {
+															"mode": "raw",
+															"raw": "{\n  \"beerName\": \"magna aliquip ad\",\n  \"beerStyle\": {},\n  \"price\": \"mollit\",\n  \"upc\": \"est deserunt\",\n  \"quantityOnHand\": 98176952\n}",
+															"options": {
+																"raw": {
+																	"headerFamily": "json",
+																	"language": "json"
+																}
+															}
+														},
+														"url": {
+															"raw": "{{baseUrl}}/api/v1/beer/:beerId",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"v1",
+																"beer",
+																":beerId"
+															],
+															"variable": [
+																{
+																	"key": "beerId"
+																}
+															]
+														}
+													},
+													"status": "Not Found",
+													"code": 404,
+													"_postman_previewlanguage": "text",
+													"header": [],
+													"cookie": [],
+													"body": ""
+												},
+												{
+													"name": "Conflict",
+													"originalRequest": {
+														"method": "PUT",
+														"header": [
+															{
+																"key": "Content-Type",
+																"value": "application/json"
+															}
+														],
+														"body": {
+															"mode": "raw",
+															"raw": "{\n  \"beerName\": \"magna aliquip ad\",\n  \"beerStyle\": {},\n  \"price\": \"mollit\",\n  \"upc\": \"est deserunt\",\n  \"quantityOnHand\": 98176952\n}",
+															"options": {
+																"raw": {
+																	"headerFamily": "json",
+																	"language": "json"
+																}
+															}
+														},
+														"url": {
+															"raw": "{{baseUrl}}/api/v1/beer/:beerId",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"v1",
+																"beer",
+																":beerId"
+															],
+															"variable": [
+																{
+																	"key": "beerId"
+																}
+															]
+														}
+													},
+													"status": "Conflict",
+													"code": 409,
+													"_postman_previewlanguage": "text",
+													"header": [],
+													"cookie": [],
+													"body": ""
+												}
+											]
+										},
+										{
+											"name": "Delete Beer",
+											"request": {
+												"method": "DELETE",
+												"header": [],
+												"url": {
+													"raw": "{{baseUrl}}/api/v1/beer/:beerId",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"v1",
+														"beer",
+														":beerId"
+													],
+													"variable": [
+														{
+															"key": "beerId",
+															"value": "<uuid>",
+															"description": "(Required) Beer Id"
+														}
+													]
+												},
+												"description": "Delete Beer by Id"
+											},
+											"response": [
+												{
+													"name": "Delelted",
+													"originalRequest": {
+														"method": "DELETE",
+														"header": [],
+														"url": {
+															"raw": "{{baseUrl}}/api/v1/beer/:beerId",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"v1",
+																"beer",
+																":beerId"
+															],
+															"variable": [
+																{
+																	"key": "beerId"
+																}
+															]
+														}
+													},
+													"status": "No Content",
+													"code": 204,
+													"_postman_previewlanguage": "text",
+													"header": [],
+													"cookie": [],
+													"body": ""
+												},
+												{
+													"name": "Not Found",
+													"originalRequest": {
+														"method": "DELETE",
+														"header": [],
+														"url": {
+															"raw": "{{baseUrl}}/api/v1/beer/:beerId",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"v1",
+																"beer",
+																":beerId"
+															],
+															"variable": [
+																{
+																	"key": "beerId"
+																}
+															]
+														}
+													},
+													"status": "Not Found",
+													"code": 404,
+													"_postman_previewlanguage": "text",
+													"header": [],
+													"cookie": [],
+													"body": ""
+												}
+											]
+										}
+									]
+								},
+								{
+									"name": "List Beers",
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/api/v1/beer?pageNumber=1&pageSize=25&showInventoryOnHand=false",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"beer"
+											],
+											"query": [
+												{
+													"key": "pageNumber",
+													"value": "1",
+													"description": "Page number."
+												},
+												{
+													"key": "pageSize",
+													"value": "25",
+													"description": "Page size."
+												},
+												{
+													"key": "beerName",
+													"value": "<string>",
+													"description": "Beer Name",
+													"disabled": true
+												},
+												{
+													"key": "beerStyle",
+													"value": "LAGER",
+													"description": "Beer Style",
+													"disabled": true
+												},
+												{
+													"key": "showInventoryOnHand",
+													"value": "false",
+													"description": "Show Inventory On Hand"
+												}
+											]
+										},
+										"description": "List Beers"
+									},
+									"response": [
+										{
+											"name": "List Beers Response",
+											"originalRequest": {
+												"method": "GET",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "application/json"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/api/v1/beer?pageNumber=1&pageSize=25&beerName=<string>&beerStyle=LAGER&showInventoryOnHand=false",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"v1",
+														"beer"
+													],
+													"query": [
+														{
+															"key": "pageNumber",
+															"value": "1",
+															"description": "Page number."
+														},
+														{
+															"key": "pageSize",
+															"value": "25",
+															"description": "Page size."
+														},
+														{
+															"key": "beerName",
+															"value": "<string>",
+															"description": "Beer Name"
+														},
+														{
+															"key": "beerStyle",
+															"value": "LAGER",
+															"description": "Beer Style"
+														},
+														{
+															"key": "showInventoryOnHand",
+															"value": "false",
+															"description": "Show Inventory On Hand"
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"pageable\": {\n    \"sort\": {\n      \"sorted\": \"<boolean>\",\n      \"unsorted\": \"<boolean>\"\n    },\n    \"offset\": \"<integer>\",\n    \"pageNumber\": \"<integer>\",\n    \"pageSize\": \"<integer>\",\n    \"paged\": \"<boolean>\",\n    \"unpaged\": \"<boolean>\"\n  },\n  \"totalPages\": \"<integer>\",\n  \"last\": \"<boolean>\",\n  \"totalElements\": \"<integer>\",\n  \"size\": \"<integer>\",\n  \"number\": \"<integer>\",\n  \"numberOfElements\": \"<integer>\",\n  \"sort\": {\n    \"sorted\": \"<boolean>\",\n    \"unsorted\": \"<boolean>\"\n  },\n  \"first\": \"<boolean>\"\n}"
+										}
+									]
+								},
+								{
+									"name": "Create New Beer",
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"beerName\": \"magna aliquip ad\",\n  \"beerStyle\": {},\n  \"price\": \"mollit\",\n  \"upc\": \"est deserunt\",\n  \"quantityOnHand\": 98176952\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/api/v1/beer",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"beer"
+											]
+										},
+										"description": "Create New Beer"
+									},
+									"response": [
+										{
+											"name": "Create new beer response",
+											"originalRequest": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"beerName\": \"magna aliquip ad\",\n  \"beerStyle\": {},\n  \"price\": \"mollit\",\n  \"upc\": \"est deserunt\",\n  \"quantityOnHand\": 98176952\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{baseUrl}}/api/v1/beer",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"v1",
+														"beer"
+													]
+												}
+											},
+											"status": "Created",
+											"code": 201,
+											"_postman_previewlanguage": "text",
+											"header": [
+												{
+													"key": "Location",
+													"value": "<uri>",
+													"description": {
+														"content": "Reference to created beer",
+														"type": "text/plain"
+													}
+												}
+											],
+											"cookie": [],
+											"body": ""
+										},
+										{
+											"name": "Bad Request",
+											"originalRequest": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"beerName\": \"magna aliquip ad\",\n  \"beerStyle\": {},\n  \"price\": \"mollit\",\n  \"upc\": \"est deserunt\",\n  \"quantityOnHand\": 98176952\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{baseUrl}}/api/v1/beer",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"v1",
+														"beer"
+													]
+												}
+											},
+											"status": "Bad Request",
+											"code": 400,
+											"_postman_previewlanguage": "text",
+											"header": [],
+											"cookie": [],
+											"body": ""
+										}
+									]
+								}
+							]
+						},
+						{
+							"name": "beerUpc",
+							"item": [
+								{
+									"name": "{upc}",
+									"item": [
+										{
+											"name": "Get Beer by UPC",
+											"request": {
+												"method": "GET",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "application/json"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/api/v1/beerUpc/:upc",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"v1",
+														"beerUpc",
+														":upc"
+													],
+													"variable": [
+														{
+															"key": "upc",
+															"value": "<string>",
+															"description": "(Required) UPC Code"
+														}
+													]
+												},
+												"description": "Get Beer by UPC Code"
+											},
+											"response": [
+												{
+													"name": "Get Beer by UPC Response",
+													"originalRequest": {
+														"method": "GET",
+														"header": [
+															{
+																"key": "Accept",
+																"value": "application/json"
+															}
+														],
+														"url": {
+															"raw": "{{baseUrl}}/api/v1/beerUpc/:upc",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"v1",
+																"beerUpc",
+																":upc"
+															],
+															"variable": [
+																{
+																	"key": "upc"
+																}
+															]
+														}
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "json",
+													"header": [
+														{
+															"key": "Content-Type",
+															"value": "application/json"
+														}
+													],
+													"cookie": [],
+													"body": "{\n  \"beerName\": \"cu\",\n  \"beerStyle\": {},\n  \"price\": \"occaecat do tempor\",\n  \"upc\": \"exercitation sed\",\n  \"quantityOnHand\": 82298849,\n  \"id\": \"<uuid>\",\n  \"version\": \"<integer>\",\n  \"createdDate\": \"<dateTime>\",\n  \"lastModifiedDate\": \"<dateTime>\"\n}"
+												},
+												{
+													"name": "Not Found",
+													"originalRequest": {
+														"method": "GET",
+														"header": [],
+														"url": {
+															"raw": "{{baseUrl}}/api/v1/beerUpc/:upc",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"v1",
+																"beerUpc",
+																":upc"
+															],
+															"variable": [
+																{
+																	"key": "upc"
+																}
+															]
+														}
+													},
+													"status": "Not Found",
+													"code": 404,
+													"_postman_previewlanguage": "text",
+													"header": [],
+													"cookie": [],
+													"body": ""
+												}
+											]
+										}
+									]
+								}
+							]
+						},
+						{
+							"name": "customers",
+							"item": [
+								{
+									"name": "{customerId}",
+									"item": [
+										{
+											"name": "orders",
+											"item": [
+												{
+													"name": "{orderId}",
+													"item": [
+														{
+															"name": "pickup",
+															"item": [
+																{
+																	"name": "pickup Customer Order",
+																	"request": {
+																		"method": "PUT",
+																		"header": [],
+																		"url": {
+																			"raw": "{{baseUrl}}/api/v1/customers/:customerId/orders/:orderId/pickup",
+																			"host": [
+																				"{{baseUrl}}"
+																			],
+																			"path": [
+																				"api",
+																				"v1",
+																				"customers",
+																				":customerId",
+																				"orders",
+																				":orderId",
+																				"pickup"
+																			],
+																			"variable": [
+																				{
+																					"key": "customerId",
+																					"value": "<uuid>",
+																					"description": "(Required) Customer Id"
+																				},
+																				{
+																					"key": "orderId",
+																					"value": "<uuid>",
+																					"description": "(Required) Order Id"
+																				}
+																			]
+																		},
+																		"description": "Pickup Order"
+																	},
+																	"response": [
+																		{
+																			"name": "No Content",
+																			"originalRequest": {
+																				"method": "PUT",
+																				"header": [],
+																				"url": {
+																					"raw": "{{baseUrl}}/api/v1/customers/:customerId/orders/:orderId/pickup",
+																					"host": [
+																						"{{baseUrl}}"
+																					],
+																					"path": [
+																						"api",
+																						"v1",
+																						"customers",
+																						":customerId",
+																						"orders",
+																						":orderId",
+																						"pickup"
+																					],
+																					"variable": [
+																						{
+																							"key": "customerId"
+																						},
+																						{
+																							"key": "orderId"
+																						}
+																					]
+																				}
+																			},
+																			"status": "No Content",
+																			"code": 204,
+																			"_postman_previewlanguage": "text",
+																			"header": [],
+																			"cookie": [],
+																			"body": ""
+																		},
+																		{
+																			"name": "Bad Reqeust",
+																			"originalRequest": {
+																				"method": "PUT",
+																				"header": [],
+																				"url": {
+																					"raw": "{{baseUrl}}/api/v1/customers/:customerId/orders/:orderId/pickup",
+																					"host": [
+																						"{{baseUrl}}"
+																					],
+																					"path": [
+																						"api",
+																						"v1",
+																						"customers",
+																						":customerId",
+																						"orders",
+																						":orderId",
+																						"pickup"
+																					],
+																					"variable": [
+																						{
+																							"key": "customerId"
+																						},
+																						{
+																							"key": "orderId"
+																						}
+																					]
+																				}
+																			},
+																			"status": "Bad Request",
+																			"code": 400,
+																			"_postman_previewlanguage": "text",
+																			"header": [],
+																			"cookie": [],
+																			"body": ""
+																		},
+																		{
+																			"name": "Not Found",
+																			"originalRequest": {
+																				"method": "PUT",
+																				"header": [],
+																				"url": {
+																					"raw": "{{baseUrl}}/api/v1/customers/:customerId/orders/:orderId/pickup",
+																					"host": [
+																						"{{baseUrl}}"
+																					],
+																					"path": [
+																						"api",
+																						"v1",
+																						"customers",
+																						":customerId",
+																						"orders",
+																						":orderId",
+																						"pickup"
+																					],
+																					"variable": [
+																						{
+																							"key": "customerId"
+																						},
+																						{
+																							"key": "orderId"
+																						}
+																					]
+																				}
+																			},
+																			"status": "Not Found",
+																			"code": 404,
+																			"_postman_previewlanguage": "text",
+																			"header": [],
+																			"cookie": [],
+																			"body": ""
+																		},
+																		{
+																			"name": "Conflict",
+																			"originalRequest": {
+																				"method": "PUT",
+																				"header": [],
+																				"url": {
+																					"raw": "{{baseUrl}}/api/v1/customers/:customerId/orders/:orderId/pickup",
+																					"host": [
+																						"{{baseUrl}}"
+																					],
+																					"path": [
+																						"api",
+																						"v1",
+																						"customers",
+																						":customerId",
+																						"orders",
+																						":orderId",
+																						"pickup"
+																					],
+																					"variable": [
+																						{
+																							"key": "customerId"
+																						},
+																						{
+																							"key": "orderId"
+																						}
+																					]
+																				}
+																			},
+																			"status": "Conflict",
+																			"code": 409,
+																			"_postman_previewlanguage": "text",
+																			"header": [],
+																			"cookie": [],
+																			"body": ""
+																		}
+																	]
+																}
+															]
+														},
+														{
+															"name": "get Customer Order By Id",
+															"request": {
+																"method": "GET",
+																"header": [
+																	{
+																		"key": "Accept",
+																		"value": "application/json"
+																	}
+																],
+																"url": {
+																	"raw": "{{baseUrl}}/api/v1/customers/:customerId/orders/:orderId",
+																	"host": [
+																		"{{baseUrl}}"
+																	],
+																	"path": [
+																		"api",
+																		"v1",
+																		"customers",
+																		":customerId",
+																		"orders",
+																		":orderId"
+																	],
+																	"variable": [
+																		{
+																			"key": "customerId",
+																			"value": "<uuid>",
+																			"description": "(Required) Customer Id"
+																		},
+																		{
+																			"key": "orderId",
+																			"value": "<uuid>",
+																			"description": "(Required) Order Id"
+																		}
+																	]
+																},
+																"description": "Get Order By Id"
+															},
+															"response": [
+																{
+																	"name": "HTTP Okay",
+																	"originalRequest": {
+																		"method": "GET",
+																		"header": [
+																			{
+																				"key": "Accept",
+																				"value": "application/json"
+																			}
+																		],
+																		"url": {
+																			"raw": "{{baseUrl}}/api/v1/customers/:customerId/orders/:orderId",
+																			"host": [
+																				"{{baseUrl}}"
+																			],
+																			"path": [
+																				"api",
+																				"v1",
+																				"customers",
+																				":customerId",
+																				"orders",
+																				":orderId"
+																			],
+																			"variable": [
+																				{
+																					"key": "customerId"
+																				},
+																				{
+																					"key": "orderId"
+																				}
+																			]
+																		}
+																	},
+																	"status": "OK",
+																	"code": 200,
+																	"_postman_previewlanguage": "json",
+																	"header": [
+																		{
+																			"key": "Content-Type",
+																			"value": "application/json"
+																		}
+																	],
+																	"cookie": [],
+																	"body": "{\n  \"customerId\": \"urn:uuid:5bfd2012-d2b5-9a92-fec2-3ac567aba4fa\",\n  \"customerRef\": \"Ut in\",\n  \"orderStatus\": {},\n  \"orderStatusCallbackUrl\": \"https://FjGEqEzgJA.lwt.DuqkkHFGiYxd+Vz.XCATdpEu8wL1tAXs,2gBXR4fjo-7VEyorYhmJ,C3,N\",\n  \"id\": \"<uuid>\",\n  \"version\": \"<integer>\",\n  \"createdDate\": \"<dateTime>\",\n  \"lastModifiedDate\": \"<dateTime>\"\n}"
+																},
+																{
+																	"name": "Customer Id or Order Id Not Found",
+																	"originalRequest": {
+																		"method": "GET",
+																		"header": [],
+																		"url": {
+																			"raw": "{{baseUrl}}/api/v1/customers/:customerId/orders/:orderId",
+																			"host": [
+																				"{{baseUrl}}"
+																			],
+																			"path": [
+																				"api",
+																				"v1",
+																				"customers",
+																				":customerId",
+																				"orders",
+																				":orderId"
+																			],
+																			"variable": [
+																				{
+																					"key": "customerId"
+																				},
+																				{
+																					"key": "orderId"
+																				}
+																			]
+																		}
+																	},
+																	"status": "Not Found",
+																	"code": 404,
+																	"_postman_previewlanguage": "text",
+																	"header": [],
+																	"cookie": [],
+																	"body": ""
+																}
+															]
+														}
+													]
+												},
+												{
+													"name": "list Customer Orders",
+													"request": {
+														"method": "GET",
+														"header": [
+															{
+																"key": "Accept",
+																"value": "application/json"
+															}
+														],
+														"url": {
+															"raw": "{{baseUrl}}/api/v1/customers/:customerId/orders?pageNumber=1&pageSize=25",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"v1",
+																"customers",
+																":customerId",
+																"orders"
+															],
+															"query": [
+																{
+																	"key": "pageNumber",
+																	"value": "1",
+																	"description": "Page number."
+																},
+																{
+																	"key": "pageSize",
+																	"value": "25",
+																	"description": "Page size."
+																}
+															],
+															"variable": [
+																{
+																	"key": "customerId",
+																	"value": "<uuid>",
+																	"description": "(Required) Customer Id"
+																}
+															]
+														},
+														"description": "List Orders"
+													},
+													"response": [
+														{
+															"name": "List Order Reponse",
+															"originalRequest": {
+																"method": "GET",
+																"header": [
+																	{
+																		"key": "Accept",
+																		"value": "application/json"
+																	}
+																],
+																"url": {
+																	"raw": "{{baseUrl}}/api/v1/customers/:customerId/orders?pageNumber=1&pageSize=25",
+																	"host": [
+																		"{{baseUrl}}"
+																	],
+																	"path": [
+																		"api",
+																		"v1",
+																		"customers",
+																		":customerId",
+																		"orders"
+																	],
+																	"query": [
+																		{
+																			"key": "pageNumber",
+																			"value": "1",
+																			"description": "Page number."
+																		},
+																		{
+																			"key": "pageSize",
+																			"value": "25",
+																			"description": "Page size."
+																		}
+																	],
+																	"variable": [
+																		{
+																			"key": "customerId"
+																		}
+																	]
+																}
+															},
+															"status": "OK",
+															"code": 200,
+															"_postman_previewlanguage": "json",
+															"header": [
+																{
+																	"key": "Content-Type",
+																	"value": "application/json"
+																}
+															],
+															"cookie": [],
+															"body": "{\n  \"pageable\": {\n    \"sort\": {\n      \"sorted\": \"<boolean>\",\n      \"unsorted\": \"<boolean>\"\n    },\n    \"offset\": \"<integer>\",\n    \"pageNumber\": \"<integer>\",\n    \"pageSize\": \"<integer>\",\n    \"paged\": \"<boolean>\",\n    \"unpaged\": \"<boolean>\"\n  },\n  \"totalPages\": \"<integer>\",\n  \"last\": \"<boolean>\",\n  \"totalElements\": \"<integer>\",\n  \"size\": \"<integer>\",\n  \"number\": \"<integer>\",\n  \"numberOfElements\": \"<integer>\",\n  \"sort\": {\n    \"sorted\": \"<boolean>\",\n    \"unsorted\": \"<boolean>\"\n  },\n  \"first\": \"<boolean>\"\n}"
+														}
+													]
+												},
+												{
+													"name": "create Order",
+													"request": {
+														"method": "POST",
+														"header": [
+															{
+																"key": "Content-Type",
+																"value": "application/json"
+															}
+														],
+														"body": {
+															"mode": "raw",
+															"raw": "{\n  \"customerId\": \"urn:uuid:6eaa2af3-e93f-7f65-fa57-004be1ef3b18\",\n  \"customerRef\": \"proident Ut ullamco\",\n  \"orderStatus\": {},\n  \"orderStatusCallbackUrl\": \"http://ZhZGaJHUEOmEdoqVBaj.esoL095OQWjaqX46U8mHrwMsFvqpyedSpPqSpR7syrAG+dB4FacNPJgzsFPfIRTQ6iTB\"\n}",
+															"options": {
+																"raw": {
+																	"headerFamily": "json",
+																	"language": "json"
+																}
+															}
+														},
+														"url": {
+															"raw": "{{baseUrl}}/api/v1/customers/:customerId/orders?pageNumber=1&pageSize=25",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"v1",
+																"customers",
+																":customerId",
+																"orders"
+															],
+															"query": [
+																{
+																	"key": "pageNumber",
+																	"value": "1",
+																	"description": "Page number."
+																},
+																{
+																	"key": "pageSize",
+																	"value": "25",
+																	"description": "Page size."
+																}
+															],
+															"variable": [
+																{
+																	"key": "customerId",
+																	"value": "<uuid>",
+																	"description": "(Required) Customer Id"
+																}
+															]
+														},
+														"description": "Place Order"
+													},
+													"response": [
+														{
+															"name": "Order Created",
+															"originalRequest": {
+																"method": "POST",
+																"header": [
+																	{
+																		"key": "Content-Type",
+																		"value": "application/json"
+																	}
+																],
+																"body": {
+																	"mode": "raw",
+																	"raw": "{\n  \"customerId\": \"urn:uuid:6eaa2af3-e93f-7f65-fa57-004be1ef3b18\",\n  \"customerRef\": \"proident Ut ullamco\",\n  \"orderStatus\": {},\n  \"orderStatusCallbackUrl\": \"http://ZhZGaJHUEOmEdoqVBaj.esoL095OQWjaqX46U8mHrwMsFvqpyedSpPqSpR7syrAG+dB4FacNPJgzsFPfIRTQ6iTB\"\n}",
+																	"options": {
+																		"raw": {
+																			"headerFamily": "json",
+																			"language": "json"
+																		}
+																	}
+																},
+																"url": {
+																	"raw": "{{baseUrl}}/api/v1/customers/:customerId/orders?pageNumber=1&pageSize=25",
+																	"host": [
+																		"{{baseUrl}}"
+																	],
+																	"path": [
+																		"api",
+																		"v1",
+																		"customers",
+																		":customerId",
+																		"orders"
+																	],
+																	"query": [
+																		{
+																			"key": "pageNumber",
+																			"value": "1",
+																			"description": "Page number."
+																		},
+																		{
+																			"key": "pageSize",
+																			"value": "25",
+																			"description": "Page size."
+																		}
+																	],
+																	"variable": [
+																		{
+																			"key": "customerId"
+																		}
+																	]
+																}
+															},
+															"status": "Created",
+															"code": 201,
+															"_postman_previewlanguage": "text",
+															"header": [
+																{
+																	"key": "Location",
+																	"value": "<uri>",
+																	"description": {
+																		"content": "Reference to created Order",
+																		"type": "text/plain"
+																	}
+																}
+															],
+															"cookie": [],
+															"body": ""
+														},
+														{
+															"name": "Bad Reqeust",
+															"originalRequest": {
+																"method": "POST",
+																"header": [
+																	{
+																		"key": "Content-Type",
+																		"value": "application/json"
+																	}
+																],
+																"body": {
+																	"mode": "raw",
+																	"raw": "{\n  \"customerId\": \"urn:uuid:6eaa2af3-e93f-7f65-fa57-004be1ef3b18\",\n  \"customerRef\": \"proident Ut ullamco\",\n  \"orderStatus\": {},\n  \"orderStatusCallbackUrl\": \"http://ZhZGaJHUEOmEdoqVBaj.esoL095OQWjaqX46U8mHrwMsFvqpyedSpPqSpR7syrAG+dB4FacNPJgzsFPfIRTQ6iTB\"\n}",
+																	"options": {
+																		"raw": {
+																			"headerFamily": "json",
+																			"language": "json"
+																		}
+																	}
+																},
+																"url": {
+																	"raw": "{{baseUrl}}/api/v1/customers/:customerId/orders?pageNumber=1&pageSize=25",
+																	"host": [
+																		"{{baseUrl}}"
+																	],
+																	"path": [
+																		"api",
+																		"v1",
+																		"customers",
+																		":customerId",
+																		"orders"
+																	],
+																	"query": [
+																		{
+																			"key": "pageNumber",
+																			"value": "1",
+																			"description": "Page number."
+																		},
+																		{
+																			"key": "pageSize",
+																			"value": "25",
+																			"description": "Page size."
+																		}
+																	],
+																	"variable": [
+																		{
+																			"key": "customerId"
+																		}
+																	]
+																}
+															},
+															"status": "Bad Request",
+															"code": 400,
+															"_postman_previewlanguage": "text",
+															"header": [],
+															"cookie": [],
+															"body": ""
+														},
+														{
+															"name": "Not Found",
+															"originalRequest": {
+																"method": "POST",
+																"header": [
+																	{
+																		"key": "Content-Type",
+																		"value": "application/json"
+																	}
+																],
+																"body": {
+																	"mode": "raw",
+																	"raw": "{\n  \"customerId\": \"urn:uuid:6eaa2af3-e93f-7f65-fa57-004be1ef3b18\",\n  \"customerRef\": \"proident Ut ullamco\",\n  \"orderStatus\": {},\n  \"orderStatusCallbackUrl\": \"http://ZhZGaJHUEOmEdoqVBaj.esoL095OQWjaqX46U8mHrwMsFvqpyedSpPqSpR7syrAG+dB4FacNPJgzsFPfIRTQ6iTB\"\n}",
+																	"options": {
+																		"raw": {
+																			"headerFamily": "json",
+																			"language": "json"
+																		}
+																	}
+																},
+																"url": {
+																	"raw": "{{baseUrl}}/api/v1/customers/:customerId/orders?pageNumber=1&pageSize=25",
+																	"host": [
+																		"{{baseUrl}}"
+																	],
+																	"path": [
+																		"api",
+																		"v1",
+																		"customers",
+																		":customerId",
+																		"orders"
+																	],
+																	"query": [
+																		{
+																			"key": "pageNumber",
+																			"value": "1",
+																			"description": "Page number."
+																		},
+																		{
+																			"key": "pageSize",
+																			"value": "25",
+																			"description": "Page size."
+																		}
+																	],
+																	"variable": [
+																		{
+																			"key": "customerId"
+																		}
+																	]
+																}
+															},
+															"status": "Not Found",
+															"code": 404,
+															"_postman_previewlanguage": "text",
+															"header": [],
+															"cookie": [],
+															"body": ""
+														},
+														{
+															"name": "Conflict",
+															"originalRequest": {
+																"method": "POST",
+																"header": [
+																	{
+																		"key": "Content-Type",
+																		"value": "application/json"
+																	}
+																],
+																"body": {
+																	"mode": "raw",
+																	"raw": "{\n  \"customerId\": \"urn:uuid:6eaa2af3-e93f-7f65-fa57-004be1ef3b18\",\n  \"customerRef\": \"proident Ut ullamco\",\n  \"orderStatus\": {},\n  \"orderStatusCallbackUrl\": \"http://ZhZGaJHUEOmEdoqVBaj.esoL095OQWjaqX46U8mHrwMsFvqpyedSpPqSpR7syrAG+dB4FacNPJgzsFPfIRTQ6iTB\"\n}",
+																	"options": {
+																		"raw": {
+																			"headerFamily": "json",
+																			"language": "json"
+																		}
+																	}
+																},
+																"url": {
+																	"raw": "{{baseUrl}}/api/v1/customers/:customerId/orders?pageNumber=1&pageSize=25",
+																	"host": [
+																		"{{baseUrl}}"
+																	],
+																	"path": [
+																		"api",
+																		"v1",
+																		"customers",
+																		":customerId",
+																		"orders"
+																	],
+																	"query": [
+																		{
+																			"key": "pageNumber",
+																			"value": "1",
+																			"description": "Page number."
+																		},
+																		{
+																			"key": "pageSize",
+																			"value": "25",
+																			"description": "Page size."
+																		}
+																	],
+																	"variable": [
+																		{
+																			"key": "customerId"
+																		}
+																	]
+																}
+															},
+															"status": "Conflict",
+															"code": 409,
+															"_postman_previewlanguage": "text",
+															"header": [],
+															"cookie": [],
+															"body": ""
+														}
+													]
+												}
+											]
+										},
+										{
+											"name": "get By Customer Id",
+											"request": {
+												"method": "GET",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "application/json"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/api/v1/customers/:customerId",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"v1",
+														"customers",
+														":customerId"
+													],
+													"variable": [
+														{
+															"key": "customerId",
+															"value": "<uuid>",
+															"description": "(Required) Customer Id"
+														}
+													]
+												},
+												"description": "Get customer by Id"
+											},
+											"response": [
+												{
+													"name": "HTTP Okay",
+													"originalRequest": {
+														"method": "GET",
+														"header": [
+															{
+																"key": "Accept",
+																"value": "application/json"
+															}
+														],
+														"url": {
+															"raw": "{{baseUrl}}/api/v1/customers/:customerId",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"v1",
+																"customers",
+																":customerId"
+															],
+															"variable": [
+																{
+																	"key": "customerId"
+																}
+															]
+														}
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "json",
+													"header": [
+														{
+															"key": "Content-Type",
+															"value": "application/json"
+														}
+													],
+													"cookie": [],
+													"body": "{\n  \"name\": \"et dolor\",\n  \"id\": \"<uuid>\",\n  \"version\": \"<integer>\",\n  \"createdDate\": \"<dateTime>\",\n  \"lastModifiedDate\": \"<dateTime>\"\n}"
+												},
+												{
+													"name": "Not Found",
+													"originalRequest": {
+														"method": "GET",
+														"header": [],
+														"url": {
+															"raw": "{{baseUrl}}/api/v1/customers/:customerId",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"v1",
+																"customers",
+																":customerId"
+															],
+															"variable": [
+																{
+																	"key": "customerId"
+																}
+															]
+														}
+													},
+													"status": "Not Found",
+													"code": 404,
+													"_postman_previewlanguage": "text",
+													"header": [],
+													"cookie": [],
+													"body": ""
+												}
+											]
+										},
+										{
+											"name": "Update By Customer Id",
+											"request": {
+												"method": "PUT",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"name\": \"esse ea sit aliqua\"\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{baseUrl}}/api/v1/customers/:customerId",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"v1",
+														"customers",
+														":customerId"
+													],
+													"variable": [
+														{
+															"key": "customerId",
+															"value": "<uuid>",
+															"description": "(Required) Customer Id"
+														}
+													]
+												},
+												"description": "Update Customer by Id"
+											},
+											"response": [
+												{
+													"name": "Beer Updated",
+													"originalRequest": {
+														"method": "PUT",
+														"header": [
+															{
+																"key": "Content-Type",
+																"value": "application/json"
+															}
+														],
+														"body": {
+															"mode": "raw",
+															"raw": "{\n  \"name\": \"esse ea sit aliqua\"\n}",
+															"options": {
+																"raw": {
+																	"headerFamily": "json",
+																	"language": "json"
+																}
+															}
+														},
+														"url": {
+															"raw": "{{baseUrl}}/api/v1/customers/:customerId",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"v1",
+																"customers",
+																":customerId"
+															],
+															"variable": [
+																{
+																	"key": "customerId"
+																}
+															]
+														}
+													},
+													"status": "No Content",
+													"code": 204,
+													"_postman_previewlanguage": "text",
+													"header": [],
+													"cookie": [],
+													"body": ""
+												},
+												{
+													"name": "Bad Reqeust",
+													"originalRequest": {
+														"method": "PUT",
+														"header": [
+															{
+																"key": "Content-Type",
+																"value": "application/json"
+															}
+														],
+														"body": {
+															"mode": "raw",
+															"raw": "{\n  \"name\": \"esse ea sit aliqua\"\n}",
+															"options": {
+																"raw": {
+																	"headerFamily": "json",
+																	"language": "json"
+																}
+															}
+														},
+														"url": {
+															"raw": "{{baseUrl}}/api/v1/customers/:customerId",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"v1",
+																"customers",
+																":customerId"
+															],
+															"variable": [
+																{
+																	"key": "customerId"
+																}
+															]
+														}
+													},
+													"status": "Bad Request",
+													"code": 400,
+													"_postman_previewlanguage": "text",
+													"header": [],
+													"cookie": [],
+													"body": ""
+												},
+												{
+													"name": "Not Found",
+													"originalRequest": {
+														"method": "PUT",
+														"header": [
+															{
+																"key": "Content-Type",
+																"value": "application/json"
+															}
+														],
+														"body": {
+															"mode": "raw",
+															"raw": "{\n  \"name\": \"esse ea sit aliqua\"\n}",
+															"options": {
+																"raw": {
+																	"headerFamily": "json",
+																	"language": "json"
+																}
+															}
+														},
+														"url": {
+															"raw": "{{baseUrl}}/api/v1/customers/:customerId",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"v1",
+																"customers",
+																":customerId"
+															],
+															"variable": [
+																{
+																	"key": "customerId"
+																}
+															]
+														}
+													},
+													"status": "Not Found",
+													"code": 404,
+													"_postman_previewlanguage": "text",
+													"header": [],
+													"cookie": [],
+													"body": ""
+												},
+												{
+													"name": "Conflict",
+													"originalRequest": {
+														"method": "PUT",
+														"header": [
+															{
+																"key": "Content-Type",
+																"value": "application/json"
+															}
+														],
+														"body": {
+															"mode": "raw",
+															"raw": "{\n  \"name\": \"esse ea sit aliqua\"\n}",
+															"options": {
+																"raw": {
+																	"headerFamily": "json",
+																	"language": "json"
+																}
+															}
+														},
+														"url": {
+															"raw": "{{baseUrl}}/api/v1/customers/:customerId",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"v1",
+																"customers",
+																":customerId"
+															],
+															"variable": [
+																{
+																	"key": "customerId"
+																}
+															]
+														}
+													},
+													"status": "Conflict",
+													"code": 409,
+													"_postman_previewlanguage": "text",
+													"header": [],
+													"cookie": [],
+													"body": ""
+												}
+											]
+										}
+									]
+								},
+								{
+									"name": "create New Customer",
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"name\": \"esse ea sit aliqua\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/api/v1/customers",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"customers"
+											]
+										},
+										"description": "Register as new customer"
+									},
+									"response": [
+										{
+											"name": "Customer Created",
+											"originalRequest": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"name\": \"esse ea sit aliqua\"\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{baseUrl}}/api/v1/customers",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"v1",
+														"customers"
+													]
+												}
+											},
+											"status": "Created",
+											"code": 201,
+											"_postman_previewlanguage": "text",
+											"header": [
+												{
+													"key": "Location",
+													"value": "<uri>",
+													"description": {
+														"content": "Reference to created customer",
+														"type": "text/plain"
+													}
+												}
+											],
+											"cookie": [],
+											"body": ""
+										},
+										{
+											"name": "Bad Reqeust",
+											"originalRequest": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"name\": \"esse ea sit aliqua\"\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{baseUrl}}/api/v1/customers",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"v1",
+														"customers"
+													]
+												}
+											},
+											"status": "Bad Request",
+											"code": 400,
+											"_postman_previewlanguage": "text",
+											"header": [],
+											"cookie": [],
+											"body": ""
+										},
+										{
+											"name": "Not Found",
+											"originalRequest": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"name\": \"esse ea sit aliqua\"\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{baseUrl}}/api/v1/customers",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"v1",
+														"customers"
+													]
+												}
+											},
+											"status": "Not Found",
+											"code": 404,
+											"_postman_previewlanguage": "text",
+											"header": [],
+											"cookie": [],
+											"body": ""
+										},
+										{
+											"name": "Conflict",
+											"originalRequest": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"name\": \"esse ea sit aliqua\"\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{baseUrl}}/api/v1/customers",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"v1",
+														"customers"
+													]
+												}
+											},
+											"status": "Conflict",
+											"code": 409,
+											"_postman_previewlanguage": "text",
+											"header": [],
+											"cookie": [],
+											"body": ""
+										}
+									]
+								},
+								{
+									"name": "List Customers",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"name\": \"esse ea sit aliqua\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/api/v1/customer",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"customer"
+											]
+										},
+										"description": "Register as new customer"
+									},
+									"response": [
+										{
+											"name": "Customer Created",
+											"originalRequest": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"name\": \"esse ea sit aliqua\"\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{baseUrl}}/api/v1/customers",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"v1",
+														"customers"
+													]
+												}
+											},
+											"status": "Created",
+											"code": 201,
+											"_postman_previewlanguage": "text",
+											"header": [
+												{
+													"key": "Location",
+													"value": "<uri>",
+													"description": {
+														"content": "Reference to created customer",
+														"type": "text/plain"
+													}
+												}
+											],
+											"cookie": [],
+											"body": ""
+										},
+										{
+											"name": "Bad Reqeust",
+											"originalRequest": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"name\": \"esse ea sit aliqua\"\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{baseUrl}}/api/v1/customers",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"v1",
+														"customers"
+													]
+												}
+											},
+											"status": "Bad Request",
+											"code": 400,
+											"_postman_previewlanguage": "text",
+											"header": [],
+											"cookie": [],
+											"body": ""
+										},
+										{
+											"name": "Not Found",
+											"originalRequest": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"name\": \"esse ea sit aliqua\"\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{baseUrl}}/api/v1/customers",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"v1",
+														"customers"
+													]
+												}
+											},
+											"status": "Not Found",
+											"code": 404,
+											"_postman_previewlanguage": "text",
+											"header": [],
+											"cookie": [],
+											"body": ""
+										},
+										{
+											"name": "Conflict",
+											"originalRequest": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"name\": \"esse ea sit aliqua\"\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{baseUrl}}/api/v1/customers",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"v1",
+														"customers"
+													]
+												}
+											},
+											"status": "Conflict",
+											"code": 409,
+											"_postman_previewlanguage": "text",
+											"header": [],
+											"cookie": [],
+											"body": ""
+										}
+									]
+								}
+							]
+						},
+						{
+							"name": "beerOrder",
+							"item": [
+								{
+									"name": "{beerOrderId}",
+									"item": [
+										{
+											"name": "Get Beer Order by Id",
+											"request": {
+												"method": "GET",
+												"header": [],
+												"url": {
+													"raw": "{{baseUrl}}/api/v1/beerorder/:beerOrderId",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"v1",
+														"beerorder",
+														":beerOrderId"
+													],
+													"variable": [
+														{
+															"key": "beerOrderId",
+															"value": "{{beerOrderId}}"
+														}
+													]
+												}
+											},
+											"response": []
+										},
+										{
+											"name": "Update Beer Order",
+											"request": {
+												"method": "PUT",
+												"header": [],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n    \"customerId\": \"{{customerId}}\",\n    \"customerRef\": \"created in postman\",\n    \"paymentAmount\": 12.25,\n    \"beerOrderLines\": [\n        {\n            \"id\": \"{{beerOrderLineId}}\",\n            \"beerId\": \"{{beerId}}\",\n            \"orderQuantity\": 2,\n            \"quantityAllocated\": 1\n        }\n    ]\n}",
+													"options": {
+														"raw": {
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{baseUrl}}/api/v1/beerorder/:beerOrderId",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"v1",
+														"beerorder",
+														":beerOrderId"
+													],
+													"variable": [
+														{
+															"key": "beerOrderId",
+															"value": "{{beerOrderId}}"
+														}
+													]
+												}
+											},
+											"response": []
+										}
+									]
+								},
+								{
+									"name": "List Beer Orders",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/api/v1/beerorder",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"beerorder"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Create Beer Order",
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"customerId\": \"{{customerId}}\",\n    \"customerRef\": \"created in postman\",\n    \"beerOrderLines\": [\n        {\n            \"beerId\": \"{{beerId}}\",\n            \"orderQuantity\": 2\n        }\n    ]\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/api/v1/beerorder",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"beerorder"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						}
+					]
+				}
+			]
+		}
+	],
+	"auth": {
+		"type": "oauth2",
+		"oauth2": [
+			{
+				"key": "clientSecret",
+				"value": "{{clientSecret}}",
+				"type": "string"
+			},
+			{
+				"key": "client_authentication",
+				"value": "header",
+				"type": "string"
+			},
+			{
+				"key": "scope",
+				"value": "message.write",
+				"type": "string"
+			},
+			{
+				"key": "clientId",
+				"value": "{{clientId}}",
+				"type": "string"
+			},
+			{
+				"key": "accessTokenUrl",
+				"value": "http://localhost:8080/oauth2/token",
+				"type": "string"
+			},
+			{
+				"key": "refreshRequestParams",
+				"value": [],
+				"type": "any"
+			},
+			{
+				"key": "tokenRequestParams",
+				"value": [],
+				"type": "any"
+			},
+			{
+				"key": "authRequestParams",
+				"value": [],
+				"type": "any"
+			},
+			{
+				"key": "tokenName",
+				"value": "foo",
+				"type": "string"
+			},
+			{
+				"key": "challengeAlgorithm",
+				"value": "S256",
+				"type": "string"
+			},
+			{
+				"key": "grant_type",
+				"value": "client_credentials",
+				"type": "string"
+			},
+			{
+				"key": "addTokenTo",
+				"value": "header",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "http://localhost:8080"
+		},
+		{
+			"key": "clientId",
+			"value": "messaging-client",
+			"type": "string"
+		},
+		{
+			"key": "clientSecret",
+			"value": "secret",
+			"type": "string"
+		},
+		{
+			"key": "beerId",
+			"value": "4b6fe75d-3e7e-4566-bb0b-38ff21fd0cb0",
+			"type": "string"
+		},
+		{
+			"key": "customerId",
+			"value": "43941bcf-5de5-4cba-85e5-34a8800d9267",
+			"type": "string"
+		},
+		{
+			"key": "beerOrderId",
+			"value": "ef693c40-6a8f-419d-a83b-871109890b1c",
+			"type": "string"
+		},
+		{
+			"key": "beerOrderLineId",
+			"value": "c4a8bad1-1513-406c-9c9d-58ff28f5ce59",
+			"type": "string"
+		}
+	]
+}
